@@ -9,5 +9,6 @@ RUN npm run build
 # Step 2: Serve the built app with a web server
 FROM nginx:alpine
 COPY --from=builder /app/dist /usr/share/nginx/html
+#expose port
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
